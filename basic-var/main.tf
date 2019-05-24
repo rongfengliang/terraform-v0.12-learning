@@ -15,10 +15,18 @@ output "username" {
     value = var.username
 }
 
+locals {
+    service_name ="dalongapp"
+}
+
 output "filecontent" {
     value = data.local_file.foo.content
 }
 
+
+output "service_info" {
+    value = local.service_name
+}
 data "local_file" "foo" {
     filename = "${path.module}/foo.bar"
 }
